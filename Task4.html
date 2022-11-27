@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uber price</title>
+  </head>
+  <body>
+    <h2>Open console to view answer</h2>
+    <script>
+   class uberRide {
+  constructor(
+    distance = Number,
+    pricePerKm = Number,
+    waitingPeriodInMintutes = Number,
+
+    airConditioner = String
+  ) {
+    this.distance = distance;
+    this.pricePerKm = pricePerKm;
+    this.waitingPeriodInMintutes = waitingPeriodInMintutes;
+    this.airConditioner = airConditioner;
+
+  }
+
+
+  get getrideDetails() {
+
+
+    if (this.airConditioner == "on" && this.waitingPeriodInMintutes >= 1) {
+      var rideDetails = `1.This person booked AC car and travelled total distance of ${
+        this.distance
+      } and waiting time was ${
+       this.waitingPeriodInMintutes
+      } mintues so the total ride price for the travel was ₹ ${
+        this.distance * (this.pricePerKm + +3) + +this.waitingPeriodInMintutes * 1.5
+      } .`;
+      return rideDetails;
+    } else if (this.airConditioner == "off" && this.waitingPeriodInMintutes > 1) {
+      var rideDetails = `2.This person booked Non-AC car and travelled total distance and waiting time was ${
+        this.waitingPeriodInMintutes
+      } mintues so the total ride price for the travel was ₹ ${
+        this.distance * (this.pricePerKm) + +this.waitingPeriodInMintutes * 1.5
+      } .`;
+      return rideDetails;
+    } else if (this.airConditioner == "on" && this.waitingPeriodInMintutes == 0) {
+      var rideDetails = `3.This person booked AC car and travelled total distance of ${
+        this.distance
+      } so the total ride price for the travel was ₹ ${
+        this.distance * (this.pricePerKm + +2)
+      } .`;
+      return rideDetails;
+    } else if (this.airConditioner == "off" && this.waitingPeriodInMintutes == 0) {
+      var rideDetails = `4.This person booked Non-AC car and travelled total distance of ${
+        this.distance
+      } So the total ride price for the travel was ₹ ${this.distance * this.pricePerKm} .`;
+      return rideDetails;
+    }
+
+  }
+};
+
+
+
+var Person1 = new uberRide(10, 7, 30, "on");
+
+
+
+
+var Person2 = new uberRide(20, 7, 45, "off");
+
+
+
+var Person3 = new uberRide(30, 7, 0, "on");
+
+
+var Person4 = new uberRide(40, 7, 0, "off");
+
+
+ // Using Array and looping Loop to generate output for all input
+ 
+
+uberAllDetailsArray = [Person1, Person2, Person3, Person4];
+
+
+
+
+
+for (const key in uberAllDetailsArray) {
+
+  console.log(`person ${[1 + +key]}:`)
+  console.log(uberAllDetailsArray[key].getrideDetails)
+  console.log(`\n\n\n`)
+
+};
+
+    </script>
+  </body>
+</html>

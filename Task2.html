@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Circle Class</title>
+</head>
+<div><img src="./ClassDiagram_Circle.png" alt="Question circle diagram" srcset=""></div>
+
+<h2>Open console to view answer and view page source to view javascript code</h2>
+
+<body>
+  <script>
+    class circle {
+      constructor(radius, color) {
+        this.radius = radius;
+        this.color = color;
+      }
+      // get Radius
+      get Radius() {
+        var rad = this.radius.toFixed(2);
+        return rad;
+
+      }
+      //set Radius
+      set setradius(rad) {
+        let radi = rad;
+        this.radius = radi;
+      }
+      //get color
+      get Color() {
+        return this.color;
+
+      }
+      //set color
+      set setColor(value) {
+        var settedcolor = value;
+        this.color = settedcolor;
+      }
+
+      //get area
+      get Area() {
+        var area = Math.PI * Math.pow(this.radius, 2);
+        return area.toFixed(2);
+      }
+      //get Cirumference
+      get Circumference() {
+        var circumference = 2 * Math.PI * this.radius;
+        return circumference.toFixed(2);
+      }
+    }
+
+
+
+
+
+    var circle1 = new circle(5, "red");
+
+    var circle2 = new circle(6, "blue")
+
+    var circle3 = new circle(8, "yellow")
+
+
+
+    // color set using set method 
+
+    circle1.setColor = "black";
+    circle3.setColor = "orange";
+
+
+
+    // Radius set using set method
+
+    circle3.setradius = 2;
+
+
+
+
+    // All ouput console codes
+
+
+    console.log(`
+    
+    ::::Using get method::::
+    
+     `)
+
+
+    console.log(`circle 1 Area in Decimal (double)  using get method :  ${circle1.Area} sq.m 
+    
+    `);
+
+    console.log(`circle 1 Circumference in Decimal (double) :  ${circle1.Circumference} meter
+    
+    `);
+
+    console.log(`circle 2 Area in Decimal (double) :  ${circle2.Area} sq.m
+    
+    `);
+
+    console.log(`circle 2 Circumference in Decimal (double) :  ${circle2.Circumference} meter
+    
+    `);
+
+     console.log(`
+     
+     ::::Using set method::::
+    
+     `)
+
+    console.log(`color of circle 1 after using set method: ${circle1.Color} color
+    
+    `);
+
+    console.log(`circle 3 Radius in Decimal (double) after using set method : ${circle1.Radius}
+    
+    `);
+
+    console.log(`color of circle 1 after using set method: ${circle3.color} color
+    
+    `);
+
+    console.log(`circle 3 Radius in Decimal (double) after using set method :${circle3.Radius}
+    
+    `);
+  </script>
+</body>
+
+</html>

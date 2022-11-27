@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>personDetails</title>
+</head>
+
+<body>
+  <h2>Open console to view answer</h2>
+  <script>
+    class person {
+      constructor(name, work, age, gender, email, mobileno) {
+        this.name = name;
+        this.work = work;
+        this.age = age;
+        this.gender = gender;
+        this.email = email;
+        this.mobileno = mobileno;
+      }
+
+
+// get method written based on gender 
+
+
+
+      get getPersonDetails() {
+        if (this.gender == "male") {
+          var data =
+            `${this.name} was working as a ${this.work} his mobile:no ${this.mobileno} and his email ${this.email}`;
+        } else {
+          var data =
+            `${this.name} was working as a ${this.work} her mobile:no ${this.mobileno} and her email ${this.email}`;
+        }
+        return data;
+      }
+    }
+
+    let person_1 = new person(
+      "Rahul",
+      "FulL Stack Developer",
+      "25",
+      "male",
+      "rahulfsd@gmail.com",
+      "9876543210"
+    );
+    let person_2 = new person(
+      "Priya",
+      "Front End Developer",
+      "28",
+      "female",
+      "priyafed@outlook.com",
+      "654321987"
+    );
+    let person_3 = new person(
+      "Ravi",
+      "Back End Developer",
+      "29",
+      "male",
+      "ravibed@yahoo.com",
+      "987321654"
+    );
+
+
+    // Using Array and looping Loop to generate output for all input
+
+    var allPersonData = [person_1, person_2, person_3];
+
+
+
+
+
+
+    for (const key in allPersonData) {
+      console.log(`\nPerson ${1 + +key} Details\n\n`);
+      console.log(allPersonData[key].getPersonDetails);
+    }
+
+  
+  </script>
+</body>
+
+</html>
